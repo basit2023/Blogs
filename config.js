@@ -1,0 +1,3 @@
+// config.js
+ window.SUPABASE_URL = "https://njutpcemdeqptyewrlps.supabase.co"
+window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5qdXRwY2VtZGVxcHR5ZXdybHBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY5NzA5NDAsImV4cCI6MjA1MjU0Njk0MH0.zmnyhiUmnPdz2DGgvzktG19hCRsj_kWdJ93eW7V7t6E"

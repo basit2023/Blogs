@@ -11,6 +11,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/template/favicon.svg">
     <link href="assets/css/style.css?v=2.0" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <title> Perfect Tips for Chicken Biryani Recipe </title>
   </head>
   <body>
@@ -417,7 +418,7 @@
                   <div class="box-comments border-gray-800">
                     <h3 class="text-heading-2 color-gray-300">Comments</h3>
                     <div class="list-comments-single">
-                      <div class="item-comment">
+                      <!-- <div class="item-comment">
                         <div class="comment-left">
                           <div class="box-author mb-20"><img src="assets/imgs/page/single/author.png" alt="Beyond">
                             <div class="author-info">
@@ -452,24 +453,81 @@
                         <div class="comment-right">
                           <div class="text-comment text-xl color-gray-500 bg-gray-850 border-gray-800">White white dreamy drama tically place everything although. Place out apartment afternoon whimsical kinder, little romantic joy we flowers handmade.</div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                   <div class="box-form-comments mb-50">
                     <h4 class="text-heading-4 color-gray-300 mb-40">Leave a comment</h4>
                     <div class="box-forms">
-                      <form action="#">
-                        <textarea class="form-control bg-gray-850 border-gray-800 bdrd16 color-gray-500" name="comment" rows="5" placeholder="Write a comment"></textarea>
-                        <div class="row mt-20">
-                          <div class="col-sm-6 mb-20">
-                            <input class="cb-agree" type="checkbox">
-                            <p class="text-sm color-gray-500 pl-25">Save my name, email, and website in this browser for the next time I comment.</p>
+                      <form action="#" id="commentForm">
+                        <!-- Name Section -->
+                        <div class="form-group">
+                          <label for="name" class="text-sm color-gray-500">Your Name</label>
+                          <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            class="form-control bg-gray-850 border-gray-800 bdrd16 color-gray-500" 
+                            placeholder="Enter your name" 
+                             />
+                        </div>
+                      
+                        <!-- Email Section -->
+                        <div class="form-group mt-20">
+                          <label for="email" class="text-sm color-gray-500">Your Email</label>
+                          <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-control bg-gray-850 border-gray-800 bdrd16 color-gray-500" 
+                            placeholder="Enter your email" 
+                            required />
+                        </div>
+                      
+                        <!-- Comment Section -->
+                        <div class="form-group mt-20">
+                          <label for="comment" class="text-sm color-gray-500">Write a Comment</label>
+                          <textarea 
+                            id="comment" 
+                            class="form-control bg-gray-850 border-gray-800 bdrd16 color-gray-500" 
+                            name="comment" 
+                            rows="5" 
+                            placeholder="Write a comment" 
+                            required></textarea>
+                        </div>
+                        <input type="hidden" id="blogName" value="">
+                        <!-- Rating Section -->
+                        <div class="rating mt-20">
+                          <p class="text-sm color-gray-500">Rate us:</p>
+                          <div class="stars">
+                            <input type="radio" id="star5" name="rating" value="5" />
+                            <label for="star5" title="5 stars">&#9733;</label>
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label for="star4" title="4 stars">&#9733;</label>
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label for="star3" title="3 stars">&#9733;</label>
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label for="star2" title="2 stars">&#9733;</label>
+                            <input type="radio" id="star1" name="rating" value="1" />
+                            <label for="star1" title="1 star">&#9733;</label>
                           </div>
-                          <div class="col-sm-6 text-end"><a class="btn btn-linear">Post Comment</a></div>
+                        </div>
+                      
+                        <!-- Save Information Section -->
+                        <div class="row mt-20">
+                          <!-- <div class="col-sm-6 mb-20">
+                            <input class="cb-agree" type="checkbox" required />
+                            <p class="text-sm color-gray-500 pl-25">Save my name, email, and website in this browser for the next time I comment.</p>
+                          </div> -->
+                          <div class="col-sm-6 text-end">
+                            <button type="submit" class="btn btn-linear">Post Comment</button>
+                          </div>
                         </div>
                       </form>
+                      
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -483,6 +541,8 @@
           <div class="row">
             <div class="col-lg-4 mb-30"><a class="wow animate__animated animate__fadeInUp" href="index.html"><img class="logo-night" src="assets/imgs/template/logo.svg" alt="Beyond"><img class="d-none logo-day" alt="Beyond" src="assets/imgs/template/logo-day.svg"></a>
               <p class="mb-20 mt-20 text-sm color-gray-500 wow animate__animated animate__fadeInUp">When an unknown prnoto sans took a galley and scrambled it to make specimen book not only five When an unknown prnoto sans took a galley and scrambled it to five centurie.</p>
+              <a href="privacyPolicy.html"><p class="color-white mb-5 wow animate__animated animate__fadeInUp">Privacy Policy</p></a>
+              <a href="terms&condition.html"><p class="color-white mb-5 wow animate__animated animate__fadeInUp">terms & Condition</p></a>
               <!-- <h6 class="color-white mb-5 wow animate__animated animate__fadeInUp">Address</h6>
               <p class="text-sm color-gray-500 wow animate__animated animate__fadeInUp">123 Main Street<br>New York, NY 10001</p> -->
             </div>
@@ -565,5 +625,45 @@
     <script src="assets/js/vendors/swiper-bundle.min.js"></script>
     <script src="assets/js/vendors/jquery.progressScroll.min.js"></script>
     <script src="assets/js/main.js?v=2.0"></script>
+    <script>
+      // Let's check what global object is available
+      console.log('Available Supabase object:', window.supabase)
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="config.js"></script>
+    <script src="assets/js/form.js"></script>
+    <script>
+      // Pass the blog name dynamically (e.g., from the URL or a variable)
+     // Replace with the actual blog name dynamically
+      loadComments("chicken-biryani");
+    
+  </script>
+    <!-- <script>
+      document.getElementById("commentForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const comment = document.querySelector("textarea[name='comment']").value;
+  const name = document.querySelector("textarea[name='name']").value;
+  const email = document.querySelector("textarea[name='email']").value;
+  const rating = document.querySelector("input[name='rating']:checked")?.value;
+
+  if (!rating) {
+    alert("Please select a rating before submitting.");
+    return;
+  }
+
+  const formData = {
+    name:name,
+    email:email,
+    comment: comment,
+    rating: rating,
+  };
+
+  // Send data to the server
+  console.log("Submitted Data:", formData);
+  alert("Your comment and rating have been submitted successfully!");
+});
+
+    </script> -->
   </body>
 </html>

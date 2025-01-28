@@ -6909,3 +6909,40 @@ iframe.google-map {
   margin-bottom: 15px;
 }
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+
+.stars {
+  display: flex;
+  flex-direction: row-reverse;  /* Reverse the direction */
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;  /* Align to the end */
+}
+
+.stars input {
+  display: none;
+}
+
+.stars label {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect */
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #f5c518;
+}
+
+/* Checked state */
+.stars input:checked ~ label {
+  color: #f5c518;
+}
+
+
+
