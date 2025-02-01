@@ -1,7 +1,7 @@
 // Ensure Supabase URL and Key are defined
 if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
     console.error('Supabase URL or Anonymous Key is missing.');
-    alert('Configuration error: Please provide a valid Supabase URL and Anonymous Key.');
+  
 } else {
     // Initialize Supabase client
     console.log("The key is available");
@@ -21,7 +21,7 @@ if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
             comment: document.getElementById('comment').value.trim(),
             rating: document.querySelector('input[name="rating"]:checked')?.value || null,
             created_at: new Date().toISOString(),
-            blog:document.getElementById('blogName').value = "chicken-biryani",
+            blog:document.getElementById('blogName').value,
         };
 
         try {
@@ -44,7 +44,7 @@ if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
             loadComments("chicken-biryani");
         } catch (error) {
             console.error('Error:', error.message);
-            alert('Error submitting comment. Please try again.');
+            
         }
     });
 
