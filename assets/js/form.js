@@ -5,11 +5,12 @@ if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
 } else {
     // Initialize Supabase client
     console.log("The key is available");
+    const blog=document.getElementById('blogName').value;
     const supabaseClient = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
 
     // Get the form element
     const form = document.getElementById('commentForm');
-
+    
     // Add submit event listener
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -41,7 +42,7 @@ if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
             // Success message
             alert('Comment submitted successfully!');
             form.reset();
-            loadComments("chicken-biryani");
+            loadComments(formData.blog);
         } catch (error) {
             console.error('Error:', error.message);
             
@@ -51,33 +52,44 @@ if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
 
     async function loadComments(blogName) {
         try {
-            // Fetch comments where the blog_name matches
+            // Fetch comments from Supabase
             const { data: comments, error } = await supabaseClient
                 .from('comments')
                 .select('*')
                 .eq('blog', blogName)
                 .order('created_at', { ascending: false });
-
+    
             if (error) throw error;
-
+    
             const commentsContainer = document.querySelector('.list-comments-single');
-
+            const avgRatingContainer = document.getElementById('averageRating');
+    
             // Clear existing comments
             commentsContainer.innerHTML = '';
-
-            // Render comments dynamically
+    
+            let totalRating = 0;
+            let ratingCount = 0;
+    
             comments.forEach(comment => {
-                // Create an avatar using name initials
                 const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(comment.name)}&background=random`;
-
-                // Format date
+    
                 const formattedDate = new Date(comment.created_at).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
                 });
-
-                // Append comment to the container
+    
+                // Generate star rating HTML
+                let stars = "";
+                const rating = comment.rating ? parseInt(comment.rating) : 0;
+                if (rating > 0) {
+                    totalRating += rating;
+                    ratingCount++;
+                }
+                for (let i = 1; i <= 5; i++) {
+                    stars += `<span style="color: ${i <= rating ? 'gold' : 'gray'}; font-size: 16px;">★</span>`;
+                }
+    
                 const commentHTML = `
                     <div class="item-comment">
                         <div class="comment-left">
@@ -91,16 +103,36 @@ if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
                         </div>
                         <div class="comment-right">
                             <div class="text-comment text-xl color-gray-500 bg-gray-850 border-gray-800">${comment.comment}</div>
+                            
                         </div>
                     </div>
                 `;
                 commentsContainer.innerHTML += commentHTML;
             });
+    
+            // Calculate and display average rating
+            if (ratingCount > 0) {
+                const avgRating = (totalRating / ratingCount).toFixed(1);
+                let avgStars = "";
+                for (let i = 1; i <= 5; i++) {
+                    avgStars += `<span style="color: ${i <= avgRating ? 'gold' : 'gray'}; font-size: 20px;">★</span>`;
+                }
+    
+                avgRatingContainer.innerHTML = `
+                    <h3 class="color-linear">Average Rating: ${avgRating} / 5</h3>
+                    <div class="average-rating-stars">${avgStars}</div>
+                `;
+            } else {
+                avgRatingContainer.innerHTML = `<h3 class="color-linear">No ratings yet</h3>`;
+            }
+    
         } catch (error) {
             console.error('Error loading comments:', error.message);
-            alert('Error loading comments. Please try again later.');
+          
         }
     }
+    
+    
     window.loadComments = loadComments;
 
 }

@@ -12,6 +12,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/template/favicon.svg">
     <link href="assets/css/style.css?v=2.0" rel="stylesheet">
+    <link rel="canonical" href="chicken-biryani.html" />
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <title> Perfect Tips for Chicken Biryani Recipe </title>
   </head>
@@ -49,7 +50,8 @@
                 </li>
                 <li class="has-children"><a class="color-gray-500" href="#">Category</a>
                   <ul class="sub-menu two-col">
-                    <li><a class="color-gray-500" href="delicious-food.html">Food 1</a></li>
+                    <li><a class="color-gray-500" href="delicious-food.html">Food</a></li>
+                    <li><a class="color-gray-500" href="pakistan-tourism.html">Travel</a></li>
                     <!-- <li><a class="color-gray-500" href="blog-archive.html">Blog Category 1</a></li>
                     <li><a class="color-gray-500" href="blog-archive-2.html">Blog Category 2</a></li>
                     <li><a class="color-gray-500" href="blog-archive-3.html">Blog Category 3</a></li>
@@ -89,7 +91,7 @@
                 <input class="btn-search-2" type="submit" value="">
               </form>
               <div class="popular-keywords text-start mt-20">
-                <p class="mb-10 color-white">Popular tags:</p><a class="color-gray-600 mr-10 font-xs" href="#"># Travel,</a><a class="color-gray-600 mr-10 font-xs" href="#"># Tech,</a><a class="color-gray-600 mr-10 font-xs" href="#"># Movie</a><a class="color-gray-600 mr-10 font-xs" href="#"># Lifestyle</a><a class="color-gray-600 mr-10 font-xs" href="#"># Sport</a>
+                <p class="mb-10 color-white">Popular tags:</p><a class="color-gray-600 mr-10 font-xs" href="pakistan-tourism.html"># Travel,</a><a class="color-gray-600 mr-10 font-xs" href="delicious-food.html"># Food,</a><a class="color-gray-600 mr-10 font-xs" href="delicious-food.html"># Fun</a><a class="color-gray-600 mr-10 font-xs" href="pakistan-tourism.html"># Lifestyle</a><a class="color-gray-600 mr-10 font-xs" href="delicious-food.html"># racipes</a>
               </div>
             </div>
             <div class="switch-button">
@@ -121,6 +123,7 @@
                   <li class="has-children"><a href="#">Category</a>
                     <ul class="sub-menu">
                       <li><a href="delicious-food.html">Food</a></li>
+                      <li><a href="pakistan-tourism.html">Travel</a></li>
                       <!-- <li><a href="blog-archive.html">Blog Category 1</a></li>
                       <li><a href="blog-archive-2.html">Blog Category 2</a></li>
                       <li><a href="blog-archive-3.html">Blog Category 3</a></li>
@@ -130,18 +133,18 @@
                   </li>
                   <li class="has-children"><a href="#">Our Blogs</a>
                     <ul class="sub-menu">
-                      <li><a href="single-sidebar.html">Blog Single 1</a></li>
-                      <li><a href="single-no-sidebar.html">Blog Single 2</a></li>
-                      <li><a href="single-center.html">Blog Single 3</a></li>
+                      <li><a href="chicken-biryani.html">chicken biryani</a></li>
+                      <li><a href="chicken-karahi.html">chicken karahi</a></li>
+                      <li><a href="pakistan-tourism.html">Travel</a></li>
                     </ul>
                   </li>
-                  <li class="has-no-children"><a class="color-gray-500" href="page-portfolio.html">Portfolio</a>
-                    <!-- <ul class="sub-menu">
+                  <!-- <li class="has-no-children"><a class="color-gray-500" href="page-portfolio.html">Portfolio</a>
+                    <ul class="sub-menu">
                       <li><a class="color-gray-500" href="page-portfolio.html">My Portfolio</a></li>
                       <li><a class="color-gray-500" href="page-portfolio-2.html">My Portfolio 2</a></li>
                       <li><a class="color-gray-500" href="portfolio-details.html">Portfolio Details</a></li>
-                    </ul> -->
-                  </li>
+                    </ul>
+                  </li> -->
                   <!-- <li class="has-children"><a href="#">Pages</a>
                     <ul class="sub-menu">
                       <li><a href="page-about.html">About</a></li>
@@ -157,7 +160,7 @@
                 </ul>
               </nav>
             </div>
-            <div class="mobile-account border-gray-800">
+            <!-- <div class="mobile-account border-gray-800">
               <div class="mobile-header-top bg-gray-900">
                 <div class="user-account"><a href="page-login.html"><img src="assets/imgs/template/ava.jpg" alt="Beyond"></a>
                   <div class="content">
@@ -166,15 +169,15 @@
                   </div>
                 </div>
               </div>
-              <!-- <ul class="mobile-menu">
+              <ul class="mobile-menu">
                 <li><a href="page-login.html">Profile</a></li>
                 <li><a href="page-login.html">Articles Saved</a></li>
                 <li><a href="page-login.html">Add new post</a></li>
                 <li><a href="page-login.html">My Likes</a></li>
                 <li><a href="page-login.html">Account Setting</a></li>
                 <li><a href="page-login.html">Sign out</a></li>
-              </ul> -->
-            </div>
+              </ul>
+            </div> -->
             <!-- <div class="site-copyright color-gray-400 mt-30">Copyright 2023 &copy; Beyond - Personal Blog Template.<br>Designed by<a href="http://alithemes.com" target="_blank">&nbsp; AliThemes</a></div> -->
           </div>
         </div>
@@ -193,6 +196,7 @@
                     <li><a href="blog-archive.html">Blog</a></li>
                     <li><span>Delicious Chicken Biryani</span></li>
                   </ul>
+                  <span id="averageRating" style="margin-bottom: 20px; text-align: end;"></span>
                 </div>
               </div>
               <div class="row mt-50 align-items-end">
@@ -215,14 +219,18 @@
                     <div class="col-md-6 mb-10">
                       <div class="box-author"><img src="assets/imgs/page/about/author2.png" alt="Beyond">
                         <div class="author-info">
-                          <h6 class="color-gray-700">Kashif Ali</h6><span class="color-gray-700 text-sm mr-30">25 Dec 2024</span><span class="color-gray-700 text-sm">3 mins to read</span>
+                          <h6 class="color-gray-700">Kashif Ali</h6><span class="color-gray-700 text-sm mr-30">25 Dec 2024</span><span class="color-gray-700 text-sm">4 mins to read</span>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-6 text-start text-md-end">
                       <div class="d-inline-block pt-10">
                         <div class="d-flex align-item-center">
-                          <h6 class="d-inline-block color-gray-500 mr-10">Share</h6><a class="icon-media icon-fb" href="#"></a><a class="icon-media icon-tw" href="#"></a><a class="icon-media icon-printest" href="#"></a>
+                          <h6 class="d-inline-block color-gray-500 mr-10">Share</h6>
+<a class="icon-media icon-fb" href="#" onclick="shareOnFacebook(event)"></a>
+<a class="icon-media icon-tw" href="#" onclick="shareOnTwitter(event)"></a>
+<a class="icon-media icon-printest" href="#" onclick="shareOnPinterest(event)"></a>
+
                         </div>
                       </div>
                     </div>
@@ -415,7 +423,7 @@
                     <!-- <h3 class="color-white mt-50 mb-30">Use your headings</h3>
                     <p class="text-lg color-gray-500">Thirty there & time wear across days, make inside on these you. Can young a really, roses blog small of song their dreamy life pretty? Because really duo living to noteworthy bloom bell. Transform clean daydreaming cute twenty process rooms cool. White white dreamy dramatically place everything although. Place out apartment afternoon whimsical kinder, little romantic joy we flowers handmade. Thirty she a studio of she whimsical projects, afternoon effect going an floated maybe.</p> -->
                   </div>
-                  <div class="box-tags"><a class="btn btn-tags bg-gray-850 border-gray-800 mr-10 hover-up" href="blog-archive.html">#Nature</a><a class="btn btn-tags bg-gray-850 border-gray-800 mr-10 hover-up" href="blog-archive.html">#Beauty</a><a class="btn btn-tags bg-gray-850 border-gray-800 mr-10 hover-up" href="blog-archive.html">#Travel Tips</a><a class="btn btn-tags bg-gray-850 border-gray-800 hover-up" href="blog-archive.html">#House</a></div>
+                  <div class="box-tags"><a class="btn btn-tags bg-gray-850 border-gray-800 mr-10 hover-up" href="pakistan-tourism.html">#Nature</a><a class="btn btn-tags bg-gray-850 border-gray-800 mr-10 hover-up" href="delicious-food.html">#Racipe</a><a class="btn btn-tags bg-gray-850 border-gray-800 mr-10 hover-up" href="pakistan-tourism.html">#Travel Tips</a><a class="btn btn-tags bg-gray-850 border-gray-800 hover-up" href="delicious-food.html">#Food</a></div>
                   <div class="box-comments border-gray-800">
                     <h3 class="text-heading-2 color-gray-300">Comments</h3>
                     <div class="list-comments-single">
@@ -553,7 +561,8 @@
                 <div class="col-6">
                   <ul class="menu-footer">
                     <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="delicious-food.html">Food</a></li>
-                    <!-- <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Business</a></li>
+                    <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="pakistan-tourism.html">Travel</a></li>
+                    <!-- 
                     <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Adventure</a></li>
                     <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">Canada</a></li>
                     <li class="wow animate__animated animate__fadeInUp"><a class="color-gray-500" href="blog-archive.html">America</a></li>
@@ -627,18 +636,63 @@
     <script src="assets/js/vendors/jquery.progressScroll.min.js"></script>
     <script src="assets/js/main.js?v=2.0"></script>
     <script>
-      // Let's check what global object is available
-      console.log('Available Supabase object:', window.supabase)
+      console.log('Available Supabase object:', window.supabase);
   </script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script src="config.js" defer></script>
-    <script src="assets/js/form.js" async></script>
-    <script>
-      // Pass the blog name dynamically (e.g., from the URL or a variable)
-     // Replace with the actual blog name dynamically
-      loadComments("chicken-biryani");
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="config.js"></script> <!-- Ensure this loads before form.js -->
+  <script src="assets/js/form.js" defer></script> <!-- Use defer to avoid async issues -->
+  
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          function checkLoadComments() {
+              if (typeof loadComments === "function") {
+                  loadComments("chicken-biryani");
+              } else {
+                  console.warn("Waiting for loadComments to load...");
+                  setTimeout(checkLoadComments, 100);
+              }
+          }
+          checkLoadComments();
+      });
+  </script>
+  <script>
+    // Get the current page URL
+    function getCurrentURL() {
+        return encodeURIComponent(window.location.href);
+    }
+  
+    // Facebook Share
+    function shareOnFacebook(event) {
+        event.preventDefault();
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`, '_blank');
+    }
+  
+    // Twitter Share
+    function shareOnTwitter(event) {
+        event.preventDefault();
+        let text = encodeURIComponent(document.title); // Use the page title as tweet text
+        window.open(`https://twitter.com/intent/tweet?url=${getCurrentURL()}&text=${text}`, '_blank');
+    }
+  
+    // Pinterest Share
+    function shareOnPinterest(event) {
+        event.preventDefault();
+        let imageUrl = 'https://example.com/image.jpg'; // Replace with an actual image URL
+        window.open(`https://pinterest.com/pin/create/button/?url=${getCurrentURL()}&media=${imageUrl}`, '_blank');
+    }
+  
+    // Copy to Clipboard
+    function copyLink(event) {
+        event.preventDefault();
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Link copied to clipboard!');
+        }).catch(err => {
+            console.error('Error copying link: ', err);
+        });
+    }
+  </script>
     
-  </script>
     <!-- <script>
       document.getElementById("commentForm").addEventListener("submit", function (e) {
   e.preventDefault();
